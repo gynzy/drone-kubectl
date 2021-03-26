@@ -1,3 +1,5 @@
+_Forked from [https://github.com/sinlead/drone-kubectl](https://github.com/sinlead/drone-kubectl) to update to kubectl 1.19_
+
 # drone-kubectl
 
 This [Drone](https://drone.io/) plugin allows you to use `kubectl` without messing around with the authentication
