@@ -2,8 +2,8 @@
 
 set -e
 
-if [ -z ${PLUGIN_NAMESPACE} ]; then
-  PLUGIN_NAMESPACE="default"
+if [ ! -z ${PLUGIN_KUBERENETES_NAMESPACE} ]; then
+  KUBERNETES_NAMESPACE=${PLUGIN_KUBERENETES_NAMESPACE}
 fi
 
 if [ -z ${PLUGIN_KUBERNETES_USER} ]; then
@@ -32,6 +32,6 @@ else
   kubectl config set-cluster default --server=${KUBERNETES_SERVER} --insecure-skip-tls-verify=true
 fi
 
-kubectl config set-context default --cluster=default --user=${PLUGIN_KUBERNETES_USER}
+kubectl config set-context default --cluster=default --user=${PLUGIN_KUBERNETES_USER} --namespace=${KUBERNETES_NAMESPACE}
 kubectl config use-context default
 
